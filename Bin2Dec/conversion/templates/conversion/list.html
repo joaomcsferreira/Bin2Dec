@@ -5,11 +5,21 @@
 
 {% block content %}
 <div class="offset-1 col-10 list-div">
-    <div class="mb-2 mt-2 input-group border p-2">
+    <div class="mb-2 mt-2 border p-2">
         <form method="POST">
-            {% csrf_token %}
-            {{ form.num|as_crispy_field }}
-            <button type="submit" class="btn btn-success">Create</button>
+            <div class="d-flex">
+                <div class="col-6">
+                    {% csrf_token %}
+                    {{ form.num|as_crispy_field }}
+                </div>
+                <div class="col-6">
+                    <span>Conversion</span>
+                    <div class="mt-2 form-control">
+                        {{ conversions.number }}
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Create</button>
         </form>
     </div>
 
