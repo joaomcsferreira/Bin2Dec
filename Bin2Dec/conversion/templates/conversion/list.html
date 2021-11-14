@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Conversions list{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <div class="mb-2 mt-2 input-group border p-2">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.num|as_crispy_field }}
+            <button type="submit" class="btn btn-success">Create</button>
+        </form>
+    </div>
+
+    <h3>Historic</h3>
+
+    <table class="table">
+        <tr>
+            <th>Binario</th>
+            <th>Decimal</th>
+            <th>Delete</th>
+        </tr>
+        {% for conversion in conversions %}
+            <tr>
+                <td>
+                    <span>{{ conversion.num }}</span>
+                </td>
+
+                <td>
+                    <span>{{ conversion.convertion }}</span>
+                </td>
+
+                <td>
+                    <a href="delete/{{conversion.id}}" onclick="return confirm('Are you sure?')"><i class="fas fa-trash text-danger"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="text-center">
+        <span>
+            {% if conversions.has_previous %}
+                <a href="?page={{ conversions.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+
+            <span>
+                {{ conversions.number }} of {{ conversions.num_pages }}
+            </span>
+
+            {% if conversions.has_next %}
+                <a href="?page={{ conversions.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

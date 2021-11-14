@@ -1,0 +1,68 @@
+:root {
+    --color-danger: #c50000;
+    --color-success: #028002;
+    --color-primary: #2f7fe7;
+    --color-link-secondary: #565E68;
+    --color-text-dark: #212529;
+    --color-text-light: #fff;
+    --color-text-grey: #e5e5e5;
+    --color-background-grey: #F9F9F9;
+    --color-text-grey-bold: #70757D;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-font-playfair: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--bs-font-sans-serif);
+    text-decoration: none;
+    list-style: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+.container {
+    min-height: 75%;
+}
+
+.title-brand {
+    font-family: var(--bs-font-playfair);
+    font-size: 4em;
+}
+
+.custom-navbar {
+    height: 100px;
+    border-bottom: 1px solid var(--color-text-grey);
+}
+
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--color-background-grey);
+    border-top: 1px solid var(--color-text-grey);
+    margin-top: 10px;
+}
+
+.footer .brand {
+    font-family: var(--bs-font-playfair);
+    font-size: 1.5em;
+    margin-left: 30px;
+}
+
+.footer .social-media {
+    margin-right: 30px;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.footer .social-media .icon {
+    font-size: 1.4em;
+}
+
+.footer .social-media a{
+    color: var(--color-text-grey-bold);
+}
