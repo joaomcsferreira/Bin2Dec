@@ -18,6 +18,21 @@
                 <a class="title-brand">Converter</a>
             </div>
         </nav>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-danger mt-2" role="alert">
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    </div>
+                {% endfor %}
+            </ul>
+        {% elif not messages %}
+            <ul class="messages">
+                    <div class="alert alert-primary mt-2" role="alert">
+                        Please, add a new binary to conversion.
+                    </div>
+            </ul>
+        {% endif %}
         <div class="row">
             {% block content %}{% endblock %}
         </div>
@@ -30,12 +45,12 @@
         <div class="social-media">
             <ul>
                 <li>
-                    <a href="https://www.linkedin.com/in/joao-mcf/">
+                    <a href="https://www.linkedin.com/in/joao-mcf/" target="_blank">
                         <i class="fab fa-github icon"></i> Linkedin
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/Joao-MCF">
+                    <a href="https://github.com/Joao-MCF" target="_blank">
                         <i class="fab fa-linkedin icon"></i> Github
                     </a>
                 </li>

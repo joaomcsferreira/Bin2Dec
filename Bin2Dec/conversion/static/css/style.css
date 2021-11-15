@@ -66,3 +66,11 @@ body, html {
 .footer .social-media a{
     color: var(--color-text-grey-bold);
 }
+
+h3#font-font {
+    font-family: var(--bs-font-playfair);
+    font-size: 2.5em;
+    font-style: italic;
+    margin-top: 30px;
+    text-align: center;
+}

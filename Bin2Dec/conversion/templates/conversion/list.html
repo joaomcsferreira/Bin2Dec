@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %}Conversions list{% endblock %}
 
@@ -7,23 +8,15 @@
 <div class="offset-1 col-10 list-div">
     <div class="mb-2 mt-2 border p-2">
         <form method="POST">
-            <div class="d-flex">
-                <div class="col-6">
+            <div>
                     {% csrf_token %}
                     {{ form.num|as_crispy_field }}
-                </div>
-                <div class="col-6">
-                    <span>Conversion</span>
-                    <div class="mt-2 form-control">
-                        {{ conversions.number }}
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-success btn-block">Create</button>
             </div>
-            <button type="submit" class="btn btn-success btn-block">Create</button>
         </form>
     </div>
 
-    <h3>Historic</h3>
+    <h3 id="font-font">Historic</h3>
 
     <table class="table">
         <tr>
@@ -38,7 +31,7 @@
                 </td>
 
                 <td>
-                    <span>{{ conversion.convertion }}</span>
+                    <span>{{ conversion.conversion }}</span>
                 </td>
 
                 <td>
